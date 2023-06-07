@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>bot使用文档 | wsd's Blog</title><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - 共 $1 行","copy":"复制","copyFinish":"复制成功","expand":"展开"}}</script><link rel="stylesheet" href="//unpkg.com/@waline/client@v2/dist/waline.css"><script src="//unpkg.com/mermaid@9.2.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link rel="stylesheet" href="/css/arknights.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches) document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches) document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">主页</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">目录</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">关于</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>bot使用文档</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-04-05T05:51:31.000Z" id="date"> 2023-04-05</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-05-01T23:57:47.207Z" id="updated"> 2023-05-02</time></div></span><br><span>文章总字数: <div class="control">1.2k</div></span></div></div><hr><div id="post-content"><p>本文将介绍本bot的使用方法.</p>
+<span id="more"></span>
+<blockquote>
+<p>本bot包含chieri的全部功能,本文不再说明.<br>具体内容请移步<a target="_blank" rel="noopener" href="https://chieri.docs.chinosk6.cn/group">这里</a></p>
+</blockquote>
+<h3 id="b站相关"><a href="#b站相关" class="headerlink" title="b站相关"></a>b站相关</h3><p>本模块中的uid需替换为b站用户的uid.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/bili set at on/off uid       #开启/关闭指定用户开播时@全体成员<br>/bili set dynamic on/off uid  #开启/关闭指定用户动态推送<br>/bili set live on/off uid     #开启/关闭指定用户直播推送<br>/bili set per on/off          #开启/关闭普通群成员操作权限<br>/bili sub uid                 #关注指定用户<br>/bili del sub uid             #取关指定用户<br>/bili sub list                #查看关注列表<br></code></pre></td></tr></table></figure>
+
+<h3 id="语音合成"><a href="#语音合成" class="headerlink" title="语音合成"></a>语音合成</h3><p>本模块基于VITS或活字印刷进行生成.<br>本模块中的text需替换为要生成语音的文本.</p>
+<ul>
+<li>活字印刷类<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/otto text          #生成otto语音<br>/otto rev text      #生成otto语音并倒放<br>/otto fig text      #生成otto语音的音频频谱<br></code></pre></td></tr></table></figure>
+活字印刷类的文本字数限制为100字.</li>
+</ul>
+<hr>
+<ul>
+<li>VITS类<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/atri text          #生成atri语音,中文文本会自动翻译为日语<br>/atri -ch text      #生成说蹩脚中文的atri语音<br>/isla text          #同上<br>/isla -ch text      #同上<br></code></pre></td></tr></table></figure>
+VITS类的文本字数限制为40字.</li>
+</ul>
+<h3 id="图片相关"><a href="#图片相关" class="headerlink" title="图片相关"></a>图片相关</h3><ul>
+<li>图片放大<br><code>/scale [图片]</code>    #对图像超分辨率,仅支持二次元插图</li>
+</ul>
+<hr>
+<ul>
+<li>发色图(真)<br>根据色号或RGB值生成一张这个颜色的图片.<br>本功能的色号或RGB值需自行替换.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/color #1f1e33      #根据色号生成图片<br>/color 31 30 51     #根据RGB值生成图片<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>发色图(假)<br>发一张涩图并在15秒后撤回,每人每日20张配额,可选标签和是否nsfw.<br>在选择nsfw时,”r18”必须位于tags之前.<br>可以使用 &amp; 和 | 将多个tag进行组合, | 的优先级永远高于 &amp; .<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/setu                    #来一张随机涩图<br>来张(r18)(tags)涩图       #来一张指定tag的涩图,r18可选,tags可自行替换<br><br>示例:<br>来张r18萝莉&amp;白丝涩图       #发送一张nsfw的tag含有&quot;萝莉&quot;且含有&quot;白丝&quot;的涩图<br>来张萝莉&amp;白丝|黑丝涩图     #发送一张tag含有&quot;萝莉&quot;且含有&quot;白丝&quot;或&quot;黑丝&quot;的涩图<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>合成&#x2F;分离幻影坦克<br>来自<a target="_blank" rel="noopener" href="https://github.com/RafuiiChan/nonebot_plugin_miragetank">nonebot_plugin_miragetank</a><br>需两张图片,支持灰度(gray)或彩色(color).<br>在发送指令等待出现”需要指定结果类型”字样后,按提示发送”gray”或”color”以指定类型并开始合成.<br>亮度增强值(可选):取值建议1~6,默认3.3,color建议5.5<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/miragetank [表图] [里图]           #按先后顺序合成图片,先发的为表图<br>/sepmiragetank [图片] &lt;亮度增强值&gt;   #分离合成的图片<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>表情包<br>指令中text需自行替换.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/lyt         #随机龙图<br>/capoo       #随机咖波<br>/喜报 text   #生成指定文字喜报<br>/悲报 text   #生成指定文字悲报<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="文字相关"><a href="#文字相关" class="headerlink" title="文字相关"></a>文字相关</h3><ul>
+<li>比较抽象的文字生成器<br>来自<a target="_blank" rel="noopener" href="https://github.com/noneplugin/nonebot-plugin-oddtext">nonebot-plugin-oddtext</a><br>指令中text需自行替换.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/抽象话 text        #我觉得这就不用写注释了(<br>/火星文 text<br>/蚂蚁文 text<br>/翻转文字 text<br>/故障文字 text<br>/古文码 text<br>/口字码 text<br>/符号码 text<br>/拼音码 text <br>/还原符号码 text<br>/还原拼音码 text<br>/问句码 text<br>/锟斤拷 text<br>/rcnb text<br>/解码rcnb text<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>绝绝子<br>在文本结尾加上”绝绝子”即可.<br><em>示例:</em>  <em>珍珠奶茶绝绝子</em></li>
+</ul>
+<hr>
+<ul>
+<li>疯狂星期四<br>随机生成疯狂星期四文案,但不仅限于星期四.<br><code>疯狂星期(一二三四五六日)</code>   #从括号里选一天并生成对应文案<br><em>示例:</em>  <em>疯狂星期二</em></li>
+</ul>
+<hr>
+<ul>
+<li>小作文<br><del>实为发大病(</del><br>对Arcaea内搭档撰写抒情小作文.<br><code>小作文</code>    #直接使用</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>联系管理员<br>非常方便的联系主播的方式.<br>指令中text需自行替换.<br><code>[联系管理员] text</code></li>
+</ul>
+<hr>
+<ul>
+<li>群银趴<br>非常普通的功能.<br><del>把群封了我可不负责.</del><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">娶群友      #亦可&quot;娶@某人&quot;,cd24小时<br>闹离婚      #字面意思,cd24小时<br>草群友      #选取随机群友注入脱氧核糖核酸,cd4小时<br>草@某人     #指定注入脱氧核糖核酸的对象,cd4小时<br>草管理      #选取随机管理注入脱氧核糖核酸,cd4小时<br>草群主      #对可爱群主注入脱氧核糖核酸,cd4小时<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>shindan<br>基于shindanmaker的占卜.<br>比较懒所以只写了两个.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">今天我是什么少女    #https://shindanmaker.com/162207<br>转生              #https://shindanmaker.com/587874<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>选择困难症帮手<br>帮你选择的好工具.<br><code>帮我选 [选项1] [选项2] [选项3] ...</code></li>
+</ul>
+<hr>
+<ul>
+<li>重开<br>在世界范围内随机投胎.<br><code>/remake</code>   #直接使用</li>
+</ul>
+<hr>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/update/">← Next 更新日志&amp;通知</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/invite/">如何邀请bot Prev →</a></div></div></div><div id="comments"><div class="selector"><button class="waline-sel"></button></div><div id="waline"></div></div></div><div class="bottom-btn"><div><a id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧</a><a id="to-index" href="#toc-div" title="文章目录">≡</a><a id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">wsd</a></h1><div id="description"><p>实际上是个什么都没有的blog（</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#b%E7%AB%99%E7%9B%B8%E5%85%B3"><span class="toc-number">1.</span> <span class="toc-text">b站相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90"><span class="toc-number">2.</span> <span class="toc-text">语音合成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%9B%B8%E5%85%B3"><span class="toc-number">3.</span> <span class="toc-text">图片相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E7%9B%B8%E5%85%B3"><span class="toc-number">4.</span> <span class="toc-text">文字相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">5.</span> <span class="toc-text">其他</span></a></li></ol></div></div><footer><nobr><span class="text-title">ICP</span><a class="text-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">备案个屁</a></nobr><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr>主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script type="module">import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+window.waline = init;
+</script><script src="/js/arknights.js"></script><script src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/js/pjax.js"></script><script class="pjax-js">reset= () => {if (document.querySelector('#waline'))
+ waline({
+   el: '#waline',
+   dark: ':root[theme-mode="dark"]',
+   serverURL: 'https://ccomments-c2jsxgvkr-wsd233.vercel.app/',
+   path: window.location.pathname,
+ });code.findCode();
+document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script></body></html>
