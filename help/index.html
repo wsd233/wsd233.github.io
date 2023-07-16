@@ -6,7 +6,7 @@ if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(
 @font-face {
  font-family: 'JetBrains Mono';
  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">主页</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">目录</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">关于</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>bot使用文档</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-04-05T05:51:31.000Z" id="date"> 2023-04-05</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-06-11T12:17:08.675Z" id="updated"> 2023-06-11</time></div></span><br><span>文章总字数: <div class="control">1.2k</div></span></div></div><hr><div id="post-content"><p>本文将介绍本bot的使用方法.</p>
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body><div class="loading" style="opacity: 0"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">主页</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">目录</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">关于</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>bot使用文档</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-04-05T05:51:31.000Z" id="date"> 2023-04-05</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2023-07-16T04:34:43.419Z" id="updated"> 2023-07-16</time></div></span><br><span>文章总字数: <div class="control">1.4k</div></span></div></div><hr><div id="post-content"><p>本文将介绍本bot的使用方法.</p>
 <span id="more"></span>
 <blockquote>
 <p>本bot包含chieri的全部功能,本文不再说明.<br>具体内容请移步<a target="_blank" rel="noopener" href="https://chieri.docs.chinosk6.cn/group">这里</a></p>
@@ -44,6 +44,10 @@ VITS类的文本字数限制为40字.</li>
 </ul>
 <hr>
 <ul>
+<li>星号猜曲名<br>修改自<a target="_blank" rel="noopener" href="https://github.com/SEVEN-6174/zhenxun_plugin_guessname">zhenxun_plugin_guessname</a><br>给定一定数目的被隐藏的曲名,通过猜字母来得到真正曲名.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/猜曲名 [阿拉伯数字]    #开始指令,可指定猜的曲子的个数,默认为10,个数可为[0,30],指令不带方括号<br>/结束                  #结束指令,发起者可随时结束,非发起者可在数分钟后结束,这个时间取决于发起猜曲名曲子的个数<br>/？ [字母]             #获取关键词提示(或字母),不同关键词间以空格分隔,指令匹配中英文问号<br>/！ [曲名] [该曲编号]   #验证所猜曲目,不支持别称<br><br>示例:<br>/猜曲名 12          #以12首曲目开始猜曲名<br>/? a                #将被隐藏的所有字符a显示<br>/? enter cli b      #将被隐藏的所有enter,cli,b显示<br>/! Quaoar 2         #验证曲名2是否为Quaoar<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
 <li>疯狂星期四<br>随机生成疯狂星期四文案,但不仅限于星期四.<br><code>疯狂星期(一二三四五六日)</code>   #从括号里选一天并生成对应文案<br><em>示例:</em>  <em>疯狂星期二</em></li>
 </ul>
 <hr>
@@ -56,6 +60,10 @@ VITS类的文本字数限制为40字.</li>
 <hr>
 <ul>
 <li>群银趴<br>非常普通的功能.<br><del>把群封了我可不负责.</del><br>鉴于部分群聊只想把草群友部分关闭,故设置为开启&#x2F;关闭功能对娶群友无影响.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">娶群友       #亦可&quot;娶群友@某人&quot;,cd24小时<br>闹离婚       #字面意思,cd24小时<br>草群友       #亦可&quot;草群友@某人&quot;,cd4小时<br>草管理       #选取随机管理注入脱氧核糖核酸,cd4小时<br>草群主       #对可爱群主注入脱氧核糖核酸,cd4小时<br>关闭群银趴    #字面意思,需群主/管理员进行操作<br>开启群银趴    #同上<br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li>随机戳一戳语音<br>‘&#x2F;randchi’  #直接使用</li>
 </ul>
 <hr>
 <ul>
